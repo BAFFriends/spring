@@ -38,7 +38,6 @@ public class RequestJobPostDto {
                 .age(this.age)
                 .startDate(this.startDate)
                 .endDate(this.endDate)
-                .mainCategory(this.mainCategory)
                 .subCategory(this.subCategory)
                 .build();
     }

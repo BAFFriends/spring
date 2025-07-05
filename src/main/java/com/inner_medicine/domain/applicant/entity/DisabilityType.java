@@ -1,11 +1,19 @@
 package com.inner_medicine.domain.applicant.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Getter
+@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "disability_type")
 public class DisabilityType {
 

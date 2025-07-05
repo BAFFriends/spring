@@ -2,20 +2,13 @@ package com.inner_medicine.domain.jobPost.entity;
 
 import com.inner_medicine.domain.auditing.entity.BaseTimeEntity;
 import com.inner_medicine.domain.company.entity.Company;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Column;
 import lombok.experimental.SuperBuilder;
 
 @Entity
@@ -71,9 +64,7 @@ public class JobPost extends BaseTimeEntity {
     @Column(name = "recruitment_end")
     private LocalDate endDate;
 
-    @Column(name = "main_category")
-    private MainCategory mainCategory;
-
+    @Enumerated(EnumType.STRING)
     @Column(name = "sub_category")
     private SubCategory subCategory;
 
