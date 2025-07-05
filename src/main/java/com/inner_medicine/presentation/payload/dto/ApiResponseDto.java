@@ -1,8 +1,9 @@
 package com.inner_medicine.presentation.payload.dto;
 
-import com.bandit.presentation.payload.code.BaseCode;
-import com.bandit.presentation.payload.code.SuccessStatus;
+
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.inner_medicine.presentation.payload.code.BaseCode;
+import com.inner_medicine.presentation.payload.code.SuccessStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
