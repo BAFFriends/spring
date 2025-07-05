@@ -19,6 +19,9 @@ public class Applicant {
     @Column(name = "member_id", updatable = false, unique = true, nullable = false)
     private Long id;
 
+    @Column(unique = true)
+    private String username;
+
     @Embedded
     private Resume resume;
 
