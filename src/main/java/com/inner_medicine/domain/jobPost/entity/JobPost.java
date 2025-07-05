@@ -66,10 +66,10 @@ public class JobPost extends BaseTimeEntity {
     private String age;
 
     @Column(name = "start_date")
-    private LocalDate StartDate;
+    private LocalDate startDate;
 
     @Column(name = "recruitment_end")
-    private LocalDate EndDate;
+    private LocalDate endDate;
 
     @Column(name = "main_category")
     private MainCategory mainCategory;

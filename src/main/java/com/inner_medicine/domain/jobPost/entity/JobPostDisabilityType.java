@@ -1,6 +1,6 @@
 package com.inner_medicine.domain.jobPost.entity;
 
-import com.inner_medicine.domain.DisabilityType;
+import com.inner_medicine.domain.applicant.entity.DisabilityType;
 import com.inner_medicine.domain.company.entity.Company;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,7 +33,7 @@ public class JobPostDisabilityType {
     private DisabilityType disabilityType;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "disability_type_id", nullable = false)
+    @JoinColumn(name = "job_post_id", nullable = false)
     private JobPost jobPost;
 
     @ManyToOne(fetch = FetchType.LAZY)
