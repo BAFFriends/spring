@@ -1,4 +1,4 @@
-package com.inner_medicine.domain.applicant.dto;
+package com.inner_medicine.domain.applicant.dto.request;
 
 import com.inner_medicine.domain.resume.entity.ResumeEducation;
 import com.inner_medicine.domain.resume.entity.enums.DegreeType;

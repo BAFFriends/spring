@@ -1,6 +1,6 @@
 package com.inner_medicine.domain.applicant.service;
 
-import com.inner_medicine.domain.applicant.dto.UpdateApplicantDto;
+import com.inner_medicine.domain.applicant.dto.request.UpdateApplicantDto;
 import com.inner_medicine.domain.applicant.entity.Applicant;
 import com.inner_medicine.domain.applicant.repository.ApplicantRepository;
 import com.inner_medicine.presentation.payload.code.ErrorStatus;

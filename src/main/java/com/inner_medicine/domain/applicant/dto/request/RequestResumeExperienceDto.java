@@ -1,4 +1,4 @@
-package com.inner_medicine.domain.applicant.dto;
+package com.inner_medicine.domain.applicant.dto.request;
 
 import com.inner_medicine.domain.resume.entity.ResumeExperience;
 import lombok.Data;
