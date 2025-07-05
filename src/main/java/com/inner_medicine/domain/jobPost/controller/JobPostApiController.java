@@ -39,4 +39,13 @@ public class JobPostApiController {
         return ApiResponseDto.onSuccess(OneJobPostResponseDto.from(jobPost));
     }
 
+    @GetMapping("/search")
+    public ApiResponseDto<List<JobPostResponseDto>> searchJobPosts(@RequestParam("keyword") String keyword) {
+        List<JobPostResponseDto> results = jobPostQueryService.searchJobPostsByTitle(keyword)
+                .stream()
+                .map(JobPostResponseDto::from)
+                .toList();
+        return ApiResponseDto.onSuccess(results);
+    }
+
 }

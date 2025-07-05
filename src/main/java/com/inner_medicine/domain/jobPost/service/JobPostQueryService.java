@@ -7,4 +7,5 @@ import java.util.List;
 public interface JobPostQueryService {
     List<JobPost> getAllJobPosts();
     JobPost getJobPostById(Long jobPostId);
+    List<JobPost> searchJobPostsByTitle(String keyword);
 }
