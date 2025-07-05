@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.5.3'
+	id 'org.springframework.boot' version '3.2.8'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -22,6 +22,10 @@ configurations {
 repositories {
 	mavenCentral()
 }
+ext {
+	set('springCloudVersion', "2023.0.3") // 현재 일반적인 최신 stable 버전으로 예시
+}
+
 
 dependencies {
 	// Web
@@ -30,6 +34,10 @@ dependencies {
 //	// Spring-security
 //	implementation 'org.springframework.boot:spring-boot-starter-security'
 //	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	//feign
+	implementation platform("org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}")
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 
 	// Test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -45,7 +53,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 
 	// Swagger openapi-ui
-	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.1'
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.4.0'
 
 	// JWT
 	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
