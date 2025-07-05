@@ -11,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 @RequiredArgsConstructor
@@ -28,5 +30,16 @@ public class JopPostCommandServiceImpl implements JobPostCommandService{
         jobPost.linkCompany(company);
 
         return jobPostRepository.save(jobPost).getId();
+    }
+
+    @Override
+    public List<JobPost> getAllJobPosts() {
+        return jobPostRepository.findAllByOrderByEndDateAsc();
+    }
+
+    @Override
+    public JobPost getJobPostById(Long jobPostId) {
+        return jobPostRepository.findById(jobPostId)
+                .orElseThrow(() -> new GeneralException(ErrorStatus.APPLICATION_JOB_POST_NOT_FOUND));
     }
 }
