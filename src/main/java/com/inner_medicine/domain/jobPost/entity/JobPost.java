@@ -78,6 +78,16 @@ public class JobPost extends BaseTimeEntity {
     @Column(name = "experience_year")
     private String experienceYear;
 
+    @Column(name = "number_of_openings")
+    private Integer numberOfOpenings;
+
+    @Column(name = "experience_requirement")
+    private String experienceRequirement;
+
+    @Column(name = "education_requirement")
+    private String educationRequirement;
+
+
     public void linkCompany(Company company) {
         this.company = company;
     }

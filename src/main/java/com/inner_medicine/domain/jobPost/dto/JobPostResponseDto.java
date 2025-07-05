@@ -16,8 +16,8 @@ public class JobPostResponseDto {
     private String location;
     private String workingHour;
     private String employmentType;
-    private String mainCategory;
-    private String subCategory;
+    private String position;
+    private String responsibilities;
     private String dDay;
 
     public static JobPostResponseDto from(JobPost jobPost) {
@@ -29,9 +29,8 @@ public class JobPostResponseDto {
                 .location(jobPost.getCompany().getAddressCode())
                 .workingHour(jobPost.getWorkingHour() != null ? "일 " + jobPost.getWorkingHour() + "시간" : null)
                 .employmentType(jobPost.getEmploymentType().name())
-                .mainCategory(jobPost.getSubCategory() != null ? jobPost.getSubCategory().getMainCategory().name() : null)
-                .subCategory(jobPost.getSubCategory() != null ? jobPost.getSubCategory().name() : null)
-
+                .position(jobPost.getPosition())
+                .responsibilities(jobPost.getResponsibilities())
                 .dDay(calcDday(jobPost.getEndDate()))
                 .build();
     }
