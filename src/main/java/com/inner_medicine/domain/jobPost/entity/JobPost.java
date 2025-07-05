@@ -16,7 +16,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "jobPost")
+@Table(name = "job_post")
 public class JobPost extends BaseTimeEntity {
 
     @Id
@@ -40,6 +40,7 @@ public class JobPost extends BaseTimeEntity {
     @Column(name = "responsibilities")
     private String responsibilities;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "employment_type")
     private EmploymentType employmentType;
 
@@ -72,6 +73,7 @@ public class JobPost extends BaseTimeEntity {
     @JoinColumn(name = "jobPost_disability_type_id", nullable = false)
     private JobPostDisabilityType jobPostDisabilityType;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "disability_level")
     private DisabilityLevel disabilityLevel;
 

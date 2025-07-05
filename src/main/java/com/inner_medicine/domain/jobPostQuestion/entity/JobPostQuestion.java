@@ -23,7 +23,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "jobPostQuestion")
+@Table(name = "job_post_puestion")
 public class JobPostQuestion extends BaseTimeEntity {
 
   @Id
