@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -37,6 +40,9 @@ public class Applicant {
     private String regCode;
 
     private String jobCategory;
+  
+    @OneToMany(mappedBy = "applicant", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<PersonalDisability> disabilities = new ArrayList<>();
 
     public void rewriteResume(Resume resume) {
         this.resume = resume;
@@ -58,4 +64,7 @@ public class Applicant {
         this.regCode = regCode;
         this.jobCategory = jobCategory;
     }
+    
+
+
 }

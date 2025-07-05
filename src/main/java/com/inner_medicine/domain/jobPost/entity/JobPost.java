@@ -7,17 +7,15 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import lombok.experimental.SuperBuilder;
 
 @Entity
@@ -43,39 +41,54 @@ public class JobPost extends BaseTimeEntity {
     @Column(name = "description", nullable = false)
     private String description;
 
-    @Column(name = "start", nullable = false)
-    private LocalDateTime start_date;
-
-    @Column(name = "end", nullable = false)
-    private LocalDateTime end_date;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false)
-    private JobPostStatus status;
-
-    @Column(name = "salary")
-    private String salary;
-
-    @Column(name = "work_time")
-    private String workTime;
-
     @Column(name = "position")
-    private String job_position;
+    private String position;
+
+    @Column(name = "responsibilities")
+    private String responsibilities;
 
     @Column(name = "employment_type")
-    private String employmentType;
+    private EmploymentType employmentType;
 
-    @Column(name = "image_url")
-    private String imageUrl;
+    @Column(name = "working_hour")
+    private Integer workingHour;
 
-    @Column(name = "manager_name")
-    private String managerName;
+    @Column(name = "working_day")
+    private Integer workingDay;
 
-    @Column(name = "manager_phone")
-    private String managerPhone;
+    @Column(name = "salary")
+    private Integer salary;
 
-    @Column(name = "manager_email")
-    private String managerEmail;
+    @Column(name = "gender")
+    private String gender;
+
+    @Column(name = "age")
+    private String age;
+
+    @Column(name = "start_date")
+    private LocalDate startDate;
+
+    @Column(name = "recruitment_end")
+    private LocalDate endDate;
+
+    @Column(name = "main_category")
+    private MainCategory mainCategory;
+
+    @Column(name = "sub_category")
+    private SubCategory subCategory;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "jobPost_disability_type_id", nullable = false)
+    private JobPostDisabilityType jobPostDisabilityType;
+
+    @Column(name = "disability_level")
+    private DisabilityLevel disabilityLevel;
+
+    @Column(name = "heavy_preferred")
+    private Boolean heavyPreferred;
+
+    @Column(name = "experience_year")
+    private String experienceYear;
 
     public void linkCompany(Company company) {
         this.company = company;

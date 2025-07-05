@@ -29,28 +29,12 @@ public class Company extends BaseTimeEntity {
   @Column(name = "name", nullable = false)
   private String name;
 
-  @Column(name = "image")
-  private String image;
-
-  @Column(name = "address", nullable = false)
-  private String address;
-
-  @Column(name = "industry")
-  private String industry;
-
-  @Column(name = "employee_count")
-  private Integer employeeCount;
+  @Column(name = "call_number", nullable = false)
+  private String callNumber;
 
   @Column(name = "company_type", nullable = false)
   private CompanyType companyType;
 
-  @Column(name = "website_url", nullable = false)
-  private String websiteUrl;
-
-  @Column(name = "business_num", nullable = false)
-  private String businessNum;
-
-  @Column(name = "phone_num", nullable = false)
-  private String phoneNum;
-
+  @Column(name = "address_code", nullable = false)
+  private String addressCode;
 }
