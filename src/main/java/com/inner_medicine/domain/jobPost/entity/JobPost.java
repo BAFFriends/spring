@@ -40,7 +40,6 @@ public class JobPost extends BaseTimeEntity {
     @Column(name = "responsibilities")
     private String responsibilities;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "employment_type")
     private EmploymentType employmentType;
 
