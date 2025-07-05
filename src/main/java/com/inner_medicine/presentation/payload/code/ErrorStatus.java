@@ -30,7 +30,9 @@ public enum ErrorStatus implements BaseCode{
     AUTH_ROLE_CANNOT_EXECUTE_URI(BAD_REQUEST,4058, "해당 인가로는 실행할 수 없는 동작입니다."),
 
     //company error (4100 ~ 4149)
-    COMPANY_NOT_FOUND(BAD_REQUEST, 4100, "회사를 찾을 수 없습니다");
+    COMPANY_NOT_FOUND(BAD_REQUEST, 4100, "회사를 찾을 수 없습니다"),
+    //applicant error (4200 ~ 4249)
+    APPLICANT_NOT_FOUND(BAD_REQUEST, 4200, "지원자를 찾을 수 없습니다");
 
 
 

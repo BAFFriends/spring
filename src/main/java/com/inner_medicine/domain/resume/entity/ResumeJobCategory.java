@@ -4,12 +4,12 @@ import com.inner_medicine.domain.applicant.entity.Applicant;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
-@Table(name = "ResumeJobCategory")
+@Embeddable
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Builder
+@EqualsAndHashCode
 public class ResumeJobCategory {
 
     @Id

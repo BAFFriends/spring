@@ -6,22 +6,15 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-@Entity
+import java.time.LocalDateTime;
+
+@Embeddable
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@SuperBuilder
-@EqualsAndHashCode(of = "id", callSuper = false)
-@Table(name = "ResumeEducation")
+@Builder
+@EqualsAndHashCode
 public class ResumeEducation {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @OneToOne
-    @JoinColumn(name = "applicant_id")
-    private Applicant applicant;
 
     private String schoolName;
 
@@ -30,9 +23,9 @@ public class ResumeEducation {
     @Enumerated(EnumType.STRING)
     private DegreeType degree; // 예: HIGH_SCHOOL, BACHELOR, MASTER 등
 
-    private String startDate;
+    private LocalDateTime startDate;
 
-    private String endDate;
+    private LocalDateTime endDate;
 
     private Boolean isCurrent;
 }

@@ -1,5 +1,6 @@
 package com.inner_medicine.domain.applicant.controller;
 
+import com.inner_medicine.domain.applicant.dto.UpdateApplicantDto;
 import com.inner_medicine.domain.applicant.service.ApplicantCommandService;
 import com.inner_medicine.presentation.payload.code.ErrorStatus;
 import com.inner_medicine.presentation.payload.dto.ApiResponseDto;
@@ -23,8 +24,10 @@ public class ApplicantApiController {
     }
 
     @PatchMapping("/applicants/{applicantId}")
-    public ApiResponseDto<Long> updateApplicantInformation(@RequestBody UpdateApplicantDto updateApplicantDto) {
-
+    public ApiResponseDto<Long> updateApplicantInformation(@PathVariable Long applicantId,
+                                                           @RequestBody UpdateApplicantDto updateApplicantDto) {
+        return ApiResponseDto.onSuccess(applicantCommandService
+                .updateApplicant(applicantId, updateApplicantDto));
     }
 
 }

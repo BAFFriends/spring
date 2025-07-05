@@ -12,8 +12,8 @@ public class RequestResumeDto {
 
     public Resume from() {
         return Resume.builder()
-                .employmentStatus(this.employmentStatus)
                 .salaryPreference(this.salaryPreference)
+                .employmentStatus(this.employmentStatus)
                 .build();
     }
 }

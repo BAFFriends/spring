@@ -1,5 +1,7 @@
 package com.inner_medicine.domain.applicant.service;
 
+import com.inner_medicine.domain.applicant.dto.UpdateApplicantDto;
+
 public interface ApplicantCommandService {
 
     Long registerApplicant(String username);
