@@ -26,7 +26,7 @@ public class JobPostAnswer extends BaseTimeEntity {
   @JoinColumn(name = "application_id", nullable = false)
   private Application application;
 
-  @Column(name = "answer")
+  @Column(name = "answer", columnDefinition = "TEXT")
   private String answer;
 
   @Column(name = "num", nullable = false)
