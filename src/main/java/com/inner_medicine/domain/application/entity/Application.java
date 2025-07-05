@@ -3,6 +3,7 @@ package com.inner_medicine.domain.application.entity;
 import com.inner_medicine.domain.applicant.entity.Applicant;
 import com.inner_medicine.domain.auditing.entity.BaseTimeEntity;
 import com.inner_medicine.domain.jobPost.entity.JobPost;
+import com.inner_medicine.domain.resume.entity.Resume;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -17,13 +18,14 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 
 @Entity
 @Getter
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@SuperBuilder
 @Table(name = "application")
 public class Application extends BaseTimeEntity {
 
@@ -39,10 +41,6 @@ public class Application extends BaseTimeEntity {
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "applicant_id", nullable = false)
   private Applicant applicant;
-
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "resume_id", nullable = false)
-  private Resume resume;
 
   @Column(name = "applied_at", nullable = false)
   private LocalDateTime appliedAt;
