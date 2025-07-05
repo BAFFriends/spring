@@ -28,6 +28,7 @@ public class RequestJobPostDto {
     private String experienceRequirement;
     private String educationRequirement;
 
+
     public JobPost from() {
         return JobPost.builder()
                 .title(this.title)
