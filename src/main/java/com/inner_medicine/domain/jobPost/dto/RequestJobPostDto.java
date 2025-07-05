@@ -1,44 +1,45 @@
 package com.inner_medicine.domain.jobPost.dto;
 
-import com.inner_medicine.domain.company.entity.Company;
 import com.inner_medicine.domain.jobPost.entity.EmploymentType;
 import com.inner_medicine.domain.jobPost.entity.JobPost;
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import com.inner_medicine.domain.jobPost.entity.MainCategory;
+import com.inner_medicine.domain.jobPost.entity.SubCategory;
 import lombok.Data;
-
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Data
 public class RequestJobPostDto {
     private String title;
     private String description;
-    private LocalDate start_date;
-    private LocalDate end_date;
+    private String position;
     private String responsibilities;
-    private Integer salary;
-    private String workTime;
-    private String job_position;
     private EmploymentType employmentType;
-    private String imageUrl;
-    private String managerName;
-    private String managerPhone;
-    private String managerEmail;
+    private Integer workingHour;
+    private Integer workingDay;
+    private Integer salary;
+    private String gender;
+    private String age;
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private MainCategory mainCategory;
+    private SubCategory subCategory;
 
     public JobPost from() {
         return JobPost.builder()
-                .description(this.description)
-                .position(this.job_position)
-                .startDate(this.start_date)
-                .endDate(this.end_date)
-                .employmentType(this.employmentType)
-                .responsibilities(this.responsibilities)
-                .salary(this.salary)
                 .title(this.title)
-                .status(this.status)
-                .workTime(this.workTime)
+                .description(this.description)
+                .position(this.position)
+                .responsibilities(this.responsibilities)
+                .employmentType(this.employmentType)
+                .workingHour(this.workingHour)
+                .workingDay(this.workingDay)
+                .salary(this.salary)
+                .gender(this.gender)
+                .age(this.age)
+                .startDate(this.startDate)
+                .endDate(this.endDate)
+                .mainCategory(this.mainCategory)
+                .subCategory(this.subCategory)
                 .build();
     }
 }

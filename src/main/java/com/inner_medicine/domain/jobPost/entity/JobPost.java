@@ -75,7 +75,7 @@ public class JobPost extends BaseTimeEntity {
     private MainCategory mainCategory;
 
     @Column(name = "sub_category")
-    private MainCategory subCategory;
+    private SubCategory subCategory;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "jobPost_disability_type_id", nullable = false)
