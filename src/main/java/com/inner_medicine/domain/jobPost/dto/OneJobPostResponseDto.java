@@ -20,7 +20,7 @@ public class OneJobPostResponseDto {
     private String location;
     private String workingHour;
     private Integer workingDay;
-    private Integer salary;
+    private String salary;
     private String gender;
     private String age;
     private LocalDate startDate;
@@ -42,7 +42,7 @@ public class OneJobPostResponseDto {
                 .location(jobPost.getCompany().getAddressCode())
                 .workingHour(jobPost.getWorkingHour() != null ? "일 " + jobPost.getWorkingHour() + "시간" : null)
                 .workingDay(jobPost.getWorkingDay())
-                .salary(jobPost.getSalary())
+                .salary(jobPost.getSalary() != null ? jobPost.getSalary() + "만원" : "협의")
                 .gender(jobPost.getGender())
                 .age(jobPost.getAge())
                 .startDate(jobPost.getStartDate())
