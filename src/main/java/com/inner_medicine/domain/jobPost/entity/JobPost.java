@@ -40,6 +40,7 @@ public class JobPost extends BaseTimeEntity {
     @Column(name = "responsibilities")
     private String responsibilities;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "employment_type")
     private EmploymentType employmentType;
 
@@ -50,7 +51,7 @@ public class JobPost extends BaseTimeEntity {
     private Integer workingDay;
 
     @Column(name = "salary")
-    private Integer salary;
+    private String salary;
 
     @Column(name = "gender")
     private String gender;
@@ -77,6 +78,16 @@ public class JobPost extends BaseTimeEntity {
 
     @Column(name = "experience_year")
     private String experienceYear;
+
+    @Column(name = "number_of_openings")
+    private Integer numberOfOpenings;
+
+    @Column(name = "experience_requirement")
+    private String experienceRequirement;
+
+    @Column(name = "education_requirement")
+    private String educationRequirement;
+
 
     public void linkCompany(Company company) {
         this.company = company;

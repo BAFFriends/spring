@@ -43,4 +43,8 @@ public class JobPostQuestion extends BaseTimeEntity {
 
   @Column(name = "num", nullable = false)
   private Integer num;
+
+  public void linkJobPost(JobPost jobPost) {
+    this.jobPost = jobPost;
+  }
 }

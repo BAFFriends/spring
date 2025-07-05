@@ -27,4 +27,9 @@ public class JobPostQueryServiceImpl implements JobPostQueryService{
         return jobPostRepository.findById(jobPostId)
                 .orElseThrow(() -> new GeneralException(ErrorStatus.APPLICATION_JOB_POST_NOT_FOUND));
     }
+
+    @Override
+    public List<JobPost> searchJobPostsByTitle(String keyword) {
+        return jobPostRepository.findByTitleContainingIgnoreCaseOrderByEndDateAsc(keyword);
+    }
 }

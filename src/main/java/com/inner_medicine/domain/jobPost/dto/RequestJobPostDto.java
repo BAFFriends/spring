@@ -4,6 +4,7 @@ import com.inner_medicine.domain.jobPost.entity.EmploymentType;
 import com.inner_medicine.domain.jobPost.entity.JobPost;
 import com.inner_medicine.domain.jobPost.entity.MainCategory;
 import com.inner_medicine.domain.jobPost.entity.SubCategory;
+import jakarta.persistence.Column;
 import lombok.Data;
 import java.time.LocalDate;
 
@@ -16,13 +17,17 @@ public class RequestJobPostDto {
     private EmploymentType employmentType;
     private Integer workingHour;
     private Integer workingDay;
-    private Integer salary;
+    private String salary;
     private String gender;
     private String age;
     private LocalDate startDate;
     private LocalDate endDate;
     private MainCategory mainCategory;
     private SubCategory subCategory;
+    private Integer numberOfOpenings;
+    private String experienceRequirement;
+    private String educationRequirement;
+
 
     public JobPost from() {
         return JobPost.builder()
@@ -39,6 +44,9 @@ public class RequestJobPostDto {
                 .startDate(this.startDate)
                 .endDate(this.endDate)
                 .subCategory(this.subCategory)
+                .numberOfOpenings(this.numberOfOpenings)
+                .experienceRequirement(this.experienceRequirement)
+                .educationRequirement(this.educationRequirement)
                 .build();
     }
 }

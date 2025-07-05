@@ -16,7 +16,8 @@ public enum SubCategory {
   컨설턴트(MainCategory.기획_전략),
   CEO_COO_CTO(MainCategory.기획_전략),
   AI기획자(MainCategory.기획_전략),
-  AI사업전략담당자(MainCategory.기획_전략);
+  AI사업전략담당자(MainCategory.기획_전략),
+  기타(MainCategory.기타);
 
   private final MainCategory mainCategory;
 }

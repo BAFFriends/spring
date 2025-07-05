@@ -38,7 +38,7 @@ public enum ErrorStatus implements BaseCode{
 
     APPLICATION_APPLICANT_NOT_FOUND(BAD_REQUEST, 4150 , "지원자를 찾을 수 없습니다."),
     APPLICATION_JOB_POST_NOT_FOUND(BAD_REQUEST, 4151, "공고를 찾을 수 없습니다."),
-    APPLICATION_QUESTION_NOT_FOUND(BAD_REQUEST, 4152, "질문을 찾을 수 없습니다.");
+    APPLICATION_QUESTION_NOT_FOUND(BAD_REQUEST, 4152, "공고 질문을 찾을 수 없습니다.");
 
 
     private final HttpStatus httpStatus;
