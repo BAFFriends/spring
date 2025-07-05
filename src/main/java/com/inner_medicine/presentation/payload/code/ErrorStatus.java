@@ -27,8 +27,11 @@ public enum ErrorStatus implements BaseCode{
     AUTH_IS_NULL(BAD_REQUEST,4055, "토큰 값이 존재하지 않습니다.(null)"),
     AUTH_OAUTH2_EMAIL_NOT_FOUND_FROM_PROVIDER(NOT_FOUND, 4056, "해당 이메일은 카카오 계정 이메일로 존재하지 않습니다."),
     AUTH_MUST_AUTHORIZED_URI(BAD_REQUEST, 4057, "인증이 필수인 uri입니다."),
-    AUTH_ROLE_CANNOT_EXECUTE_URI(BAD_REQUEST,4058, "해당 인가로는 실행할 수 없는 동작입니다.");
+    AUTH_ROLE_CANNOT_EXECUTE_URI(BAD_REQUEST,4058, "해당 인가로는 실행할 수 없는 동작입니다."),
 
+    APPLICATION_APPLICANT_NOT_FOUND(BAD_REQUEST,4150 , "지원자를 찾을 수 없습니다." ),
+    APPLICATION_JOB_POST_NOT_FOUND(BAD_REQUEST, 4151, "공고를 찾을 수 없습니다."),
+    APPLICATION_QUESTION_NOT_FOUND(BAD_REQUEST, 4152, "질문을 찾을 수 없습니다.");
 
 
     private final HttpStatus httpStatus;
