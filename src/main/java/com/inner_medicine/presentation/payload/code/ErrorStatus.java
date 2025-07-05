@@ -29,7 +29,10 @@ public enum ErrorStatus implements BaseCode{
     AUTH_MUST_AUTHORIZED_URI(BAD_REQUEST, 4057, "인증이 필수인 uri입니다."),
     AUTH_ROLE_CANNOT_EXECUTE_URI(BAD_REQUEST,4058, "해당 인가로는 실행할 수 없는 동작입니다."),
 
-    APPLICATION_APPLICANT_NOT_FOUND(BAD_REQUEST,4150 , "지원자를 찾을 수 없습니다." ),
+    //company error (4100 ~ 4149)
+    COMPANY_NOT_FOUND(BAD_REQUEST, 4100, "회사를 찾을 수 없습니다"),
+
+    APPLICATION_APPLICANT_NOT_FOUND(BAD_REQUEST, 4150 , "지원자를 찾을 수 없습니다."),
     APPLICATION_JOB_POST_NOT_FOUND(BAD_REQUEST, 4151, "공고를 찾을 수 없습니다."),
     APPLICATION_QUESTION_NOT_FOUND(BAD_REQUEST, 4152, "질문을 찾을 수 없습니다.");
 

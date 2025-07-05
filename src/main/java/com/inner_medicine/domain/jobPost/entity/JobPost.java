@@ -76,4 +76,8 @@ public class JobPost extends BaseTimeEntity {
 
     @Column(name = "manager_email")
     private String managerEmail;
+
+    public void linkCompany(Company company) {
+        this.company = company;
+    }
 }
