@@ -9,4 +9,5 @@ public interface JobPostCommandService {
 
     Long writeJobPost(Long companyId, RequestJobPostDto requestJobPostDto);
     List<JobPost> getAllJobPosts();
+    JobPost getJobPostById(Long jobPostId);
 }
