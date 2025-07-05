@@ -8,6 +8,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -88,4 +89,8 @@ public class JobPost extends BaseTimeEntity {
 
     @Column(name = "experience_year")
     private String experienceYear;
+
+    public void linkCompany(Company company) {
+        this.company = company;
+    }
 }

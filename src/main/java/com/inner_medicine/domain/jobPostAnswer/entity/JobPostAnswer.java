@@ -1,4 +1,4 @@
-package com.inner_medicine.domain.entity;
+package com.inner_medicine.domain.jobPostAnswer.entity;
 
 import com.inner_medicine.domain.application.entity.Application;
 import com.inner_medicine.domain.auditing.entity.BaseTimeEntity;
