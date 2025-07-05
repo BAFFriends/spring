@@ -5,22 +5,13 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-@Entity
+@Embeddable
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-@SuperBuilder
-@EqualsAndHashCode(of = "id", callSuper = false)
-@Table(name = "ResumeExperience")
+@Builder
+@EqualsAndHashCode
 public class ResumeSelfIntroduction {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @OneToOne
-    @JoinColumn(name = "applicant_id")
-    private Applicant applicant;
 
     private String title;
 

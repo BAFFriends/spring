@@ -21,7 +21,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "장애 요구사항")
+@Table(name = "job_post_disability_type")
 public class JobPostDisabilityType {
 
     @Id
@@ -36,7 +36,4 @@ public class JobPostDisabilityType {
     @JoinColumn(name = "job_post_id", nullable = false)
     private JobPost jobPost;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "company_id", nullable = false)
-    private Company company;
 }
