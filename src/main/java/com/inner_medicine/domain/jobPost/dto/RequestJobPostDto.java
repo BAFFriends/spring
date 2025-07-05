@@ -17,7 +17,7 @@ public class RequestJobPostDto {
     private EmploymentType employmentType;
     private Integer workingHour;
     private Integer workingDay;
-    private Integer salary;
+    private String salary;
     private String gender;
     private String age;
     private LocalDate startDate;
