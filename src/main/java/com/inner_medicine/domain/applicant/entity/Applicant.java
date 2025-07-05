@@ -28,23 +28,43 @@ public class Applicant {
     @Embedded
     private Resume resume;
 
-    @OneToOne(mappedBy = "applicant", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Embedded
     private ResumeEducation education;
 
-    @OneToOne(mappedBy = "applicant", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Embedded
     private ResumeExperience experience;
 
-    @OneToOne(mappedBy = "applicant", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Embedded
     private ResumeSelfIntroduction selfIntroduction;
 
-    @OneToOne(mappedBy = "applicant", cascade = CascadeType.ALL, orphanRemoval = true)
-    private ResumeRegion region;
+    private String regCode;
 
-    @OneToOne(mappedBy = "applicant", cascade = CascadeType.ALL, orphanRemoval = true)
-    private ResumeJobCategory jobCategory;
-
+    private String jobCategory;
+  
     @OneToMany(mappedBy = "applicant", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PersonalDisability> disabilities = new ArrayList<>();
+
+    public void rewriteResume(Resume resume) {
+        this.resume = resume;
+    }
+
+    public void rewriteResumeEducation(ResumeEducation resumeEducation) {
+        this.education = resumeEducation;
+    }
+
+    public void rewriteResumeExperience(ResumeExperience resumeExperience) {
+        this.experience = resumeExperience;
+    }
+
+    public void rewriteResumeSelfIntroduction(ResumeSelfIntroduction resumeSelfIntroduction) {
+        this.selfIntroduction = resumeSelfIntroduction;
+    }
+
+    public void rewriteRegCodeAndJobCategory(String regCode, String jobCategory) {
+        this.regCode = regCode;
+        this.jobCategory = jobCategory;
+    }
+    
 
 
 }

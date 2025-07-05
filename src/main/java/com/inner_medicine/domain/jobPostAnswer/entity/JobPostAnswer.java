@@ -32,7 +32,7 @@ public class JobPostAnswer extends BaseTimeEntity {
   @JoinColumn(name = "jobPostQuestion_id", nullable = false)
   private JobPostQuestion jobPostQuestion;
 
-  @Column(name = "answer")
+  @Column(name = "answer", columnDefinition = "TEXT")
   private String answer;
 
   @Column(name = "num", nullable = false)

@@ -3,6 +3,8 @@ package com.inner_medicine.domain.company.entity;
 import com.inner_medicine.domain.auditing.entity.BaseTimeEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -32,6 +34,7 @@ public class Company extends BaseTimeEntity {
   @Column(name = "call_number", nullable = false)
   private String callNumber;
 
+  @Enumerated(EnumType.STRING)
   @Column(name = "company_type", nullable = false)
   private CompanyType companyType;
 
