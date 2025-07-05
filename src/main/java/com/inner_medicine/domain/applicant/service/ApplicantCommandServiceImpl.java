@@ -19,4 +19,9 @@ public class ApplicantCommandServiceImpl implements ApplicantCommandService{
                 .build();
         return applicantRepository.save(applicant).getId();
     }
+
+    @Override
+    public Long updateApplicant(Long applicantId, UpdateApplicantDto dto) {
+        return null;
+    }
 }

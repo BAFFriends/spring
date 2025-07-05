@@ -22,4 +22,9 @@ public class ApplicantApiController {
         return ApiResponseDto.onSuccess(applicantCommandService.registerApplicant(username));
     }
 
+    @PatchMapping("/applicants/{applicantId}")
+    public ApiResponseDto<Long> updateApplicantInformation(@RequestBody UpdateApplicantDto updateApplicantDto) {
+
+    }
+
 }
