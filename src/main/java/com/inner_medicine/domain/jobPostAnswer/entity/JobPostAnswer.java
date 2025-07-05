@@ -1,8 +1,10 @@
 package com.inner_medicine.domain.jobPostAnswer.entity;
 
+import com.inner_medicine.domain.applicant.entity.Applicant;
 import com.inner_medicine.domain.application.entity.Application;
 import com.inner_medicine.domain.auditing.entity.BaseTimeEntity;
 import com.inner_medicine.domain.jobPost.entity.JobPost;
+import com.inner_medicine.domain.jobPostQuestion.entity.JobPostQuestion;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,8 +25,12 @@ public class JobPostAnswer extends BaseTimeEntity {
   private Long id;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "application_id", nullable = false)
-  private Application application;
+  @JoinColumn(name = "applicant_id", nullable = false)
+  private Applicant applicant;
+
+  @OneToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "jobPostQuestion_id", nullable = false)
+  private JobPostQuestion jobPostQuestion;
 
   @Column(name = "answer")
   private String answer;
