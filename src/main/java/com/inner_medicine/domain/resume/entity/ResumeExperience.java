@@ -23,9 +23,9 @@ public class ResumeExperience {
 
     private String responsibilities;
 
-    private LocalDateTime startDate;
+    private LocalDateTime resumeExperienceStartDate;
 
-    private LocalDateTime endDate;
+    private LocalDateTime resumeExperienceEndDate;
 
-    private Boolean isCurrent;
+    private Boolean isCurrentExperience;
 }

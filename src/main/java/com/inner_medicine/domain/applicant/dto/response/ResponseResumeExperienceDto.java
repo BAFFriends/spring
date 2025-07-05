@@ -29,9 +29,9 @@ public class ResponseResumeExperienceDto {
                 .positionTitle(resumeExperience.getPositionTitle())
                 .department(resumeExperience.getDepartment())
                 .responsibilities(resumeExperience.getResponsibilities())
-                .startDate(resumeExperience.getStartDate())
-                .endDate(resumeExperience.getEndDate())
-                .isCurrent(resumeExperience.getIsCurrent())
+                .startDate(resumeExperience.getResumeExperienceStartDate())
+                .endDate(resumeExperience.getResumeExperienceEndDate())
+                .isCurrent(resumeExperience.getIsCurrentExperience())
                 .build();
     }
 }

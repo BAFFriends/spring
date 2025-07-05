@@ -22,11 +22,17 @@ public class ApplicantQueryServiceImpl implements ApplicantQueryService{
         Applicant applicant = applicantRepository.findById(applicantId)
                 .orElseThrow(() -> new GeneralException(ErrorStatus.APPLICANT_NOT_FOUND));
 
+        // 각 Embedded 객체가 null이 아닌 경우에만 DTO로 변환
+        ResponseResumeDto resumeDto = (applicant.getResume() != null) ? ResponseResumeDto.of(applicant.getResume()) : null;
+        ResponseResumeEducationDto educationDto = (applicant.getEducation() != null) ? ResponseResumeEducationDto.of(applicant.getEducation()) : null;
+        ResponseResumeExperienceDto experienceDto = (applicant.getExperience() != null) ? ResponseResumeExperienceDto.of(applicant.getExperience()) : null;
+        ResponseResumeSelfIntroductionDto selfIntroductionDto = (applicant.getSelfIntroduction() != null) ? ResponseResumeSelfIntroductionDto.of(applicant.getSelfIntroduction()) : null;
+
         return ResponseApplicantDto.builder()
-                .responseResumeDto(ResponseResumeDto.of(applicant.getResume()))
-                .responseResumeEducationDto(ResponseResumeEducationDto.of(applicant.getEducation()))
-                .responseResumeExperienceDto(ResponseResumeExperienceDto.of(applicant.getExperience()))
-                .responseResumeSelfIntroductionDto(ResponseResumeSelfIntroductionDto.of(applicant.getSelfIntroduction()))
+                .responseResumeDto(resumeDto)
+                .responseResumeEducationDto(educationDto)
+                .responseResumeExperienceDto(experienceDto)
+                .responseResumeSelfIntroductionDto(selfIntroductionDto)
                 .jobCategory(applicant.getJobCategory())
                 .regCode(applicant.getRegCode())
                 .build();

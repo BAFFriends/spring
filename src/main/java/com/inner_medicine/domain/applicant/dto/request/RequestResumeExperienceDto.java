@@ -27,9 +27,9 @@ public class RequestResumeExperienceDto {
                 .positionTitle(this.positionTitle)
                 .department(this.department)
                 .responsibilities(this.responsibilities)
-                .startDate(this.startDate)
-                .endDate(this.endDate)
-                .isCurrent(this.isCurrent)
+                .resumeExperienceStartDate(this.startDate)
+                .resumeExperienceEndDate(this.endDate)
+                .isCurrentExperience(this.isCurrent)
                 .build();
     }
 }

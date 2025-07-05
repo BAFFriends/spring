@@ -21,9 +21,9 @@ public class RequestResumeEducationDto {
     public ResumeEducation from() {
         return ResumeEducation.builder()
                 .degree(this.degree)
-                .startDate(this.startDate)
-                .endDate(this.endDate)
-                .isCurrent(this.isCurrent)
+                .resumeEducationStartDate(this.startDate)
+                .resumeEducationEndDate(this.endDate)
+                .isCurrentEducation(this.isCurrent)
                 .major(this.major)
                 .schoolName(this.schoolName)
                 .build();

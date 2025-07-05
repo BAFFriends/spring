@@ -21,9 +21,9 @@ public class ResponseResumeEducationDto {
     public static ResponseResumeEducationDto of(ResumeEducation resumeEducation) {
         return ResponseResumeEducationDto.builder()
                 .degree(resumeEducation.getDegree())
-                .startDate(resumeEducation.getStartDate())
-                .endDate(resumeEducation.getEndDate())
-                .isCurrent(resumeEducation.getIsCurrent())
+                .startDate(resumeEducation.getResumeEducationStartDate())
+                .endDate(resumeEducation.getResumeEducationEndDate())
+                .isCurrent(resumeEducation.getIsCurrentEducation())
                 .major(resumeEducation.getMajor())
                 .schoolName(resumeEducation.getSchoolName())
                 .build();

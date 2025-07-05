@@ -23,9 +23,9 @@ public class ResumeEducation {
     @Enumerated(EnumType.STRING)
     private DegreeType degree; // 예: HIGH_SCHOOL, BACHELOR, MASTER 등
 
-    private LocalDateTime startDate;
+    private LocalDateTime resumeEducationStartDate;
 
-    private LocalDateTime endDate;
+    private LocalDateTime resumeEducationEndDate;
 
-    private Boolean isCurrent;
+    private Boolean isCurrentEducation;
 }
