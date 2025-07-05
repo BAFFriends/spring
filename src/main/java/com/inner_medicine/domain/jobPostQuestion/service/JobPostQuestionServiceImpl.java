@@ -22,7 +22,7 @@ public class JobPostQuestionServiceImpl implements JobPostQuestionService {
   @Override
   public Long writeJobPostQuestion(Long jobPostId, RequestJobPostQuestion dto) {
      JobPost post = jobPostRepository.findById(jobPostId)
-         .orElseThrow(() -> new GeneralException(ErrorStatus.JOBPOST_NOT_FOUND));
+         .orElseThrow(() -> new GeneralException(ErrorStatus.APPLICATION_JOB_POST_NOT_FOUND));
      JobPostQuestion jobPostQuestion = dto.from();
      jobPostQuestion.linkJobPost(post);
 

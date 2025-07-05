@@ -31,7 +31,7 @@ public class JobPostAnswerServiceImpl implements JobPostAnswerService {
         .orElseThrow(() -> new GeneralException(ErrorStatus.APPLICANT_NOT_FOUND));
 
     JobPostQuestion question = jobPostQuestionRepository.findById(jobPostQuestionId)
-        .orElseThrow(() -> new GeneralException(ErrorStatus.JOBPOSTQUESTION_NOT_FOUND));
+        .orElseThrow(() -> new GeneralException(ErrorStatus.APPLICATION_QUESTION_NOT_FOUND));
 
     JobPostAnswer jobPostAnswer = dto.from();
     jobPostAnswer.linkAnswer(applicant, question);
