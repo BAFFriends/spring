@@ -33,7 +33,7 @@ public enum ErrorStatus implements BaseCode{
     COMPANY_NOT_FOUND(BAD_REQUEST, 4100, "회사를 찾을 수 없습니다"),
 
     //applicant error (4200 ~ 4249)
-    APPLICANT_NOT_FOUND(BAD_REQUEST, 4200, "지원자를 찾을 수 없습니다");
+    APPLICANT_NOT_FOUND(BAD_REQUEST, 4200, "지원자를 찾을 수 없습니다"),
 
 
     APPLICATION_APPLICANT_NOT_FOUND(BAD_REQUEST, 4150 , "지원자를 찾을 수 없습니다."),

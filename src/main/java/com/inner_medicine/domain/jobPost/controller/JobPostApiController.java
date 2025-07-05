@@ -4,6 +4,7 @@ import com.inner_medicine.domain.jobPost.dto.JobPostResponseDto;
 import com.inner_medicine.domain.jobPost.dto.RequestJobPostDto;
 import com.inner_medicine.domain.jobPost.entity.JobPost;
 import com.inner_medicine.domain.jobPost.service.JobPostCommandService;
+import com.inner_medicine.domain.jobPost.service.JobPostQueryService;
 import com.inner_medicine.presentation.payload.dto.ApiResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,7 @@ import java.util.List;
 public class JobPostApiController {
 
     private final JobPostCommandService jobPostCommandService;
+    private final JobPostQueryService jobPostQueryService;
 
     @PostMapping("/companies/{companyId}")
     public ApiResponseDto<Long> writeJobPost(@PathVariable Long companyId,
@@ -24,7 +26,7 @@ public class JobPostApiController {
     }
     @GetMapping()
     public ApiResponseDto<List<JobPostResponseDto>> readJobPosts() {
-        List<JobPostResponseDto> jobPosts = jobPostCommandService.getAllJobPosts()
+        List<JobPostResponseDto> jobPosts = jobPostQueryService.getAllJobPosts()
                 .stream()
                 .map(JobPostResponseDto::from)
                 .toList();
@@ -32,7 +34,7 @@ public class JobPostApiController {
     }
     @GetMapping("/{jobPostId}")
     public ApiResponseDto<JobPostResponseDto> readJobPost(@PathVariable Long jobPostId) {
-        JobPost jobPost = jobPostCommandService.getJobPostById(jobPostId);
+        JobPost jobPost = jobPostQueryService.getJobPostById(jobPostId);
         return ApiResponseDto.onSuccess(JobPostResponseDto.from(jobPost));
     }
 
