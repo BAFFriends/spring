@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface JobPostRepository extends JpaRepository<JobPost, Long> {
     List<JobPost> findAllByOrderByEndDateAsc();
+    List<JobPost> findByTitleContainingIgnoreCaseOrderByEndDateAsc(String keyword);
 }

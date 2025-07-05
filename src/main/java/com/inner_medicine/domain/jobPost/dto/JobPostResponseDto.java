@@ -14,7 +14,10 @@ public class JobPostResponseDto {
     private String title;
     private String salary;
     private String location;
+    private String workingHour;
     private String employmentType;
+    private String position;
+    private String responsibilities;
     private String dDay;
 
     public static JobPostResponseDto from(JobPost jobPost) {
@@ -24,7 +27,10 @@ public class JobPostResponseDto {
                 .title(jobPost.getTitle())
                 .salary(jobPost.getSalary() != null ? jobPost.getSalary() + "만원" : "협의")
                 .location(jobPost.getCompany().getAddressCode())
+                .workingHour(jobPost.getWorkingHour() != null ? "일 " + jobPost.getWorkingHour() + "시간" : null)
                 .employmentType(jobPost.getEmploymentType().name())
+                .position(jobPost.getPosition())
+                .responsibilities(jobPost.getResponsibilities())
                 .dDay(calcDday(jobPost.getEndDate()))
                 .build();
     }

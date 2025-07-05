@@ -1,6 +1,7 @@
 package com.inner_medicine.domain.jobPost.controller;
 
 import com.inner_medicine.domain.jobPost.dto.JobPostResponseDto;
+import com.inner_medicine.domain.jobPost.dto.OneJobPostResponseDto;
 import com.inner_medicine.domain.jobPost.dto.RequestJobPostDto;
 import com.inner_medicine.domain.jobPost.entity.JobPost;
 import com.inner_medicine.domain.jobPost.service.JobPostCommandService;
@@ -33,9 +34,18 @@ public class JobPostApiController {
         return ApiResponseDto.onSuccess(jobPosts);
     }
     @GetMapping("/{jobPostId}")
-    public ApiResponseDto<JobPostResponseDto> readJobPost(@PathVariable Long jobPostId) {
+    public ApiResponseDto<OneJobPostResponseDto> readJobPost(@PathVariable Long jobPostId) {
         JobPost jobPost = jobPostQueryService.getJobPostById(jobPostId);
-        return ApiResponseDto.onSuccess(JobPostResponseDto.from(jobPost));
+        return ApiResponseDto.onSuccess(OneJobPostResponseDto.from(jobPost));
+    }
+
+    @GetMapping("/search")
+    public ApiResponseDto<List<JobPostResponseDto>> searchJobPosts(@RequestParam("keyword") String keyword) {
+        List<JobPostResponseDto> results = jobPostQueryService.searchJobPostsByTitle(keyword)
+                .stream()
+                .map(JobPostResponseDto::from)
+                .toList();
+        return ApiResponseDto.onSuccess(results);
     }
 
 }
