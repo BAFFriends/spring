@@ -51,7 +51,7 @@ public class JobPost extends BaseTimeEntity {
     private Integer workingDay;
 
     @Column(name = "salary")
-    private Integer salary;
+    private String salary;
 
     @Column(name = "gender")
     private String gender;
