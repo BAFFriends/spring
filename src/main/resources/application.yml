@@ -1,5 +1,7 @@
 spring:
   jpa:
+    hibernate:
+      ddl-auto: update
     properties:
       hibernate:
       #show_sql: true
@@ -16,3 +18,11 @@ spring:
     username: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html # 기본 경로, 변경하지 않았다면 이대로
+    disable-swagger-default-url: true # 기본 URL 비활성화 (권장)
+    display-request-duration: true # 요청 시간 표시
+  api-docs:
+    path: /v3/api-docs # API 문서 JSON 경로
