@@ -7,6 +7,7 @@ import lombok.Data;
 @Data
 @Builder
 public class ResponseApplicantDto {
+    private Long id;
     private ResponseResumeDto responseResumeDto;
     private ResponseResumeEducationDto responseResumeEducationDto;
     private ResponseResumeExperienceDto responseResumeExperienceDto;
