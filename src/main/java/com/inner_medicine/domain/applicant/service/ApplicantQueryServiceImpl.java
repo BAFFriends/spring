@@ -35,6 +35,7 @@ public class ApplicantQueryServiceImpl implements ApplicantQueryService{
                 .responseResumeSelfIntroductionDto(selfIntroductionDto)
                 .jobCategory(applicant.getJobCategory())
                 .regCode(applicant.getRegCode())
+                .id(applicantId)
                 .build();
     }
 }
