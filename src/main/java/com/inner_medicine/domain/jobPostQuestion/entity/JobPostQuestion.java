@@ -40,4 +40,7 @@ public class JobPostQuestion extends BaseTimeEntity {
 
   @Column(name = "is_required", nullable = false)
   private Boolean isRequired;
+
+  @Column(name = "num", nullable = false)
+  private Integer num;
 }
